@@ -1,5 +1,5 @@
 {
-    "Governors": [
+    "governors": [
         {"id": 1, "name": "Jean-Luc Picard", "isActive": true, "colonyId": 1},
         {"id": 2, "name": "James T. Kirk", "isActive": true, "colonyId": 2},
         {"id": 3, "name": "Leia Organa", "isActive": true, "colonyId": 3},
@@ -27,7 +27,7 @@
         {"id": 25, "name": "Nyota Uhura", "isActive": true, "colonyId": 1}
     ],
          
-    "Colonies": [
+    "colonies": [
         {"id": 1, "name": "Luna", "governorLimit": 3},
         {"id": 2, "name": "Mars", "governorLimit": 5},
         {"id": 3, "name": "Ganymede", "governorLimit": 2},
@@ -41,7 +41,7 @@
         {"id": 11, "name": "Oberon", "governorLimit": 1},
         {"id": 12, "name": "Enceladus", "governorLimit": 1}
   ],
-    "MiningFacilities": [
+    "facilities": [
         {"id": 1, "name": "Weyland-Yutani", "isActive": true},
         {"id": 2, "name": "Tyrell Corporation", "isActive": true},
         {"id": 3, "name": "Blue Sun Corporation", "isActive": true},
@@ -49,7 +49,7 @@
         {"id": 5, "name": "InGen Corporation", "isActive": false},
         {"id": 6, "name": "Sirius Cybernetics Corporation", "isActive": true}
   ],
-    "Minerals": [
+    "minerals": [
         {"id": 1, "name": "Titanium"},
         {"id": 2, "name": "Aluminum"},
         {"id": 3, "name": "Iron"},
@@ -81,7 +81,7 @@
         {"id": 29, "name": "Rhenium"},
         {"id": 30, "name": "Boron"}
   ],
-    "Facility_Minerals": [
+    "facilityMinerals": [
     {"id": 1, "mineralId": 1, "facilityId": 1, "quantity": 50},
     {"id": 2, "mineralId": 2, "facilityId": 1, "quantity": 30},
     {"id": 3, "mineralId": 3, "facilityId": 1, "quantity": 25},
@@ -118,7 +118,7 @@
     {"id": 29, "mineralId": 29, "facilityId": 6, "quantity": 25},
     {"id": 30, "mineralId": 30, "facilityId": 6, "quantity": 50}
   ],
-    "Colony_Minerals": [
+    "colonyMinerals": [
     {"id": 1, "colonyId": 1, "mineralId": 1, "quantity": 20},
     {"id": 2, "colonyId": 1, "mineralId": 2, "quantity": 30},
     {"id": 3, "colonyId": 1, "mineralId": 3, "quantity": 25},
