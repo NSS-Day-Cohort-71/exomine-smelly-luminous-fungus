@@ -1,4 +1,46 @@
 {
-    "minerals":[],
-    "facilityMinerals": []
-}
+    "Governors": [
+      {
+        "id": null,
+        "name": "",
+        "isActive": null,
+        "colonyId": null
+      }
+    ],
+    "Colonies": [
+      {
+        "id": null,
+        "name": "",
+        "governorLimit": null
+      }
+    ],
+    "MiningFacilities": [
+      {
+        "id": null,
+        "name": "",
+        "isActive": null
+      }
+    ],
+    "Minerals": [
+      {
+        "id": null,
+        "name": ""
+      }
+    ],
+    "Facility_Minerals": [
+      {
+        "id": null,
+        "mineralId": null,
+        "facilityId": null,
+        "quantity": null
+      }
+    ],
+    "Colony_Minerals": [
+      {
+        "id": null,
+        "colonyId": null,
+        "mineralId": null,
+        "quantity": null
+      }
+    ]
+  }
