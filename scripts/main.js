@@ -1,12 +1,22 @@
+
+import { facilities } from "./MiningFacilities.js"
 import { GovernorsList } from "./Governors.js";
 
-export const render = async () => {
-  const containerElement = document.querySelector("#container");
 
-  const governorHTML = await GovernorsList();
+const container = document.querySelector("#container")
+const governorHTML = await GovernorsList();
+const render = async () => {
 
-  containerElement.innerHTML = `
-  ${governorHTML}`;
-};
 
-render();
+    const composedHTML =`
+    ${governorHTML}
+    <article class="facilities>
+        <section class="facilities__options">
+        ${await facilities()}
+        </section></article>
+    `
+
+    container.innerHTML = composedHTML
+}
+
+render()
