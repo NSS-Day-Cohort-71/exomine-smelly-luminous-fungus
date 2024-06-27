@@ -1,14 +1,17 @@
 const state = {
+  governorId: 0,
+};
 
-}
-
+export const setGovernorId = (id) => {
+  state.governorId = id;
+};
 export const setFacility = (facilityId) => {
-    state.selectedFacility = facilityId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
-}
+  state.selectedFacility = facilityId;
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+};
 
 export const purchaseMineral = () => {
-    /*
+  /*
         Does the chosen governor's colony already own some of this mineral?
             - If yes, what should happen?
             - If no, what should happen?
@@ -20,7 +23,5 @@ export const purchaseMineral = () => {
         Only the foolhardy try to solve this problem with code.
     */
 
-
-
-    document.dispatchEvent(new CustomEvent("stateChanged"))
-}
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+};
