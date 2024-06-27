@@ -1,5 +1,5 @@
 
-import { facilities } from "./MiningFacilities"
+import { facilities } from "./MiningFacilities.js"
 import { GovernorsList } from "./Governors.js";
 
 
@@ -12,7 +12,7 @@ const render = async () => {
     ${governorHTML}
     <article class="facilities>
         <section class="facilities__options">
-        ${facilities()}
+        ${await facilities()}
         </section></article>
     `
 
