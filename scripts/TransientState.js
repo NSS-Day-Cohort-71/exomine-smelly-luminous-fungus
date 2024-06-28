@@ -31,3 +31,5 @@ export const purchaseMineral = () => {
 
   document.dispatchEvent(new CustomEvent("stateChanged"));
 };
+
+export const getState = () => state
