@@ -3,7 +3,7 @@ import { getAllColonies } from "./managers/colonyManager.js";
 import { getAllColonyMinerals } from "./managers/colonyMineralManager.js";
 //look at the chosen governor
 export const Colonies = async () => {
-  const currentState = getState();
+  const currentState = state;
   if (currentState.governorId != 0) {
     const allColonies = await getAllColonies();
     const allColonyMinerals = await getAllColonyMinerals();
