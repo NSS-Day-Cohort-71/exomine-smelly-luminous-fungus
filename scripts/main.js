@@ -1,18 +1,17 @@
-
-import { facilities } from "./MiningFacilities.js"
+import { facilities } from "./MiningFacilities.js";
 import { GovernorsList } from "./Governors.js";
 import { Colonies } from "./Colonies.js";
+import { mineralsListHTML } from "./Minerals.js";
 
-
-const container = document.querySelector("#container")
+const container = document.querySelector("#container");
 
 export const render = async () => {
-const governorHTML = await GovernorsList();
-const facilitiesHTML = await facilities()
-const colonyHTML = await Colonies()
-const mineralsHTML = `<div><h2>Facility Minerals for Place Holder</h2></div>*Place miner html variable here*`;
+  const governorHTML = await GovernorsList();
+  const facilitiesHTML = await facilities();
+  const colonyHTML = await Colonies();
+  const mineralsHTML = await mineralsListHTML();
 
-const composedHTML = `
+  const composedHTML = `
   <div class="flex-container">
     <div class="left-panel">
       <section class="governor-section">
@@ -31,10 +30,9 @@ const composedHTML = `
       </section>
     </div>
   </div>
-`
+`;
 
-    container.innerHTML = composedHTML
-}
+  container.innerHTML = composedHTML;
+};
 
-render()
-
+render();
