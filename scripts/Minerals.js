@@ -3,11 +3,12 @@ import { getAllFacilityMinerals } from "./managers/facilityMineralManager.js";
 //import state
 //display minerals available to colony to purchase
 const facilityMineralList = await getAllFacilityMinerals();
-export const MineralsForSale = async (facilityId) => {
+const facilityId = state.facilityId;
+export const MineralsForSale = async () => {
   facilityMineralList.filter((facility) => facility.id === facilityId);
 };
 
-export const displayInventory = async (facilityId) => {
+export const displayInventory = async () => {
   const inventory = MineralsForSale(facilityId);
 
   inventory.forEach((item) => {

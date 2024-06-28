@@ -1,4 +1,4 @@
-const state = {
+export let state = {
   governorId: 0,
   facilityId: 0,
 };
