@@ -1,7 +1,6 @@
 //get governors with manager function
 import { getAllGovernors } from "./managers/governorManager.js";
 import { setGovernorId } from "./TransientState.js";
-import { getAllGovernors } from "./managers/governorManager.js";
 
 //make a dropdown for only active governors
 export const GovernorsList = async () => {
@@ -24,6 +23,7 @@ const governorChangeHandler = (e) => {
   if (e.target.id === "GovernorsList") {
     setGovernorId(parseInt(e.target.value));
   }
+  render();
 };
 
 document.addEventListener("change", governorChangeHandler);
