@@ -18,3 +18,9 @@ export const facilities = async () => {
 
   return facilitiesHtml;
 };
+
+// const facilitiesChangeHandler = (e) => {
+//     if (e.target.id === "facilities") {
+
+//     }
+// }

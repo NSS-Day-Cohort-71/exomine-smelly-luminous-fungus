@@ -23,7 +23,6 @@ const governorChangeHandler = (e) => {
   if (e.target.id === "GovernorsList") {
     setGovernorId(parseInt(e.target.value));
   }
-  render();
 };
 
 document.addEventListener("change", governorChangeHandler);
