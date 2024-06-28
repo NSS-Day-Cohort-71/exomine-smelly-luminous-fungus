@@ -1,0 +1,124 @@
+/* main.css */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Style */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0e0b16; /* Dark background for sci-fi theme */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Container Style */
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+  }
+  
+  /* Governor Section */
+  .governor-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #1a1a2e;
+    border-radius: 8px;
+  }
+  
+  .governor-section select {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #162447;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .governor-section img {
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Facilities Section */
+  .facilities-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #1a1a2e;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  .facilities-section select {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #162447;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  /* Minerals Section */
+  .minerals-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #1a1a2e;
+    border: 2px dotted #e43f5a;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  /* Colony Section */
+  .colony {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #1a1a2e;
+    border-radius: 8px;
+  }
+  
+  .assigned-colony {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .colony-inventory {
+    margin-bottom: 5px;
+  }
+  
+  /* Flexbox Layout */
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
