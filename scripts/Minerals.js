@@ -1,23 +1,31 @@
 //have to get minerals from mining facility
-import { getAllFacilityMinerals } from "./managers/facilityMineralManager";
+import { getAllFacilityMinerals } from "./managers/facilityMineralManager.js";
 
 //display minerals available to colony to purchase
-export const MineralsForSale = async () => {
-  const mineralSaleList = await getAllFacilityMinerals();
-  let mineralsHTML = `<form id="minerals">`;
-  //each options should have a radio button
-  const mineralsMap = mineralSaleList.map((mineral) => {
-    //if inventory = 0 then no radio button
-    if (mineral.quantity === 0) {
-      return `<div>${mineral.mineral.name}</div>`;
-    } else {
-      return `<div>
-        <input type="radio" name="mineral" /> ${mineral.quantity} ${mineral.mineral.name}
-        </div>`;
-    }
-  });
+const facilityMineralList = await getAllFacilityMinerals();
+export const MineralsForSale = async (facilityId) => {
+  facilityMineralList.filter((facility) => facility.id === facilityId);
+};
 
-  mineralsHTML += mineralsMap.join("");
+export const displayInventory = async (facilityId) => {
+  const inventory = MineralsForSale(facilityId);
+
+  inventory.forEach((item) => {
+    //each options should  have a radio button
+    return `<div></div>
+    <radio id="${item.id} /> ${inventory.quantity} ${facilityMineralList.mineral.name}
+    </div>
+    `;
+  });
+};
+
+//if inventory = 0 then no radio button
+//   return `<div>
+//     <input type="radio" name="mineral" /> ${mineral.quantity} ${mineral.mineral.name}
+//     </div>`;
+export const mineralsListHTML = () => {
+  let mineralsHTML = `<form id="minerals">`;
+  mineralsHTML += displayInventory.join("");
   mineralsHTML += `</form>`;
   return mineralsHTML;
 };
