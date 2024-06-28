@@ -6,7 +6,7 @@ import { Colonies } from "./Colonies.js";
 
 const container = document.querySelector("#container")
 
-const render = async () => {
+export const render = async () => {
 const governorHTML = await GovernorsList();
 const facilitiesHTML = await facilities()
 const colonyHTML = await Colonies()
