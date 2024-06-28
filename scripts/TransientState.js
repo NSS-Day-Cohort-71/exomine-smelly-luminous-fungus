@@ -1,5 +1,5 @@
 const state = {
-  governorId: 0,
+  governorId: 2,
 };
 
 export const setGovernorId = (id) => {
@@ -25,3 +25,5 @@ export const purchaseMineral = () => {
 
   document.dispatchEvent(new CustomEvent("stateChanged"));
 };
+
+export const getState = () => state
