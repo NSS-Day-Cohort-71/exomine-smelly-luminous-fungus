@@ -4,12 +4,13 @@ import { getAllColonyMinerals } from "./managers/colonyMineralManager.js"
 //look at the chosen governor
 export const Colonies = async () => {
     const currentState = getState()
+    if(currentState.governorId != 0){
     const allColonies = await getAllColonies()
     const allColonyMinerals = await getAllColonyMinerals()
     const assignedColony = allColonies.find(colony => currentState.governorId === colony.id)
     const colonyInventory = allColonyMinerals.filter(colMin => colMin.colonyId === assignedColony.id)
         
-    let colonyHTML = `<h2 class="assigned-colony">${assignedColony.name}</h2>`
+    let colonyHTML = `<h2 class="assigned-colony">Minerals for ${assignedColony.name}</h2>`
     colonyHTML += `
         ${
             colonyInventory.map(colInv => {
@@ -18,6 +19,7 @@ export const Colonies = async () => {
         }
     `
     return colonyHTML
+    } else return `<h2 class="assigned-colony"></h2>`
 }
 
 

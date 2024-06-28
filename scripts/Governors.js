@@ -1,4 +1,7 @@
 //get governors with manager function
+
+import { setGovernorId } from "./TransientState.js";
+import { render } from "./main.js";
 import { getAllGovernors } from "./managers/governorManager.js";
 import { setGovernorId } from "./TransientState.js";
 
@@ -10,7 +13,7 @@ export const GovernorsList = async () => {
                         <option disabled selected>Select Governor</option>`;
   const governorsMap = governors.map((governor) => {
     if (governor.isActive === true) {
-      return `<option value="${governor.id}">${governor.name}</option>`;
+      return `<option value="${governor.colonyId}">${governor.name}</option>`;
     }
   });
   governorHTML += governorsMap.join("");
@@ -22,6 +25,7 @@ export const GovernorsList = async () => {
 const governorChangeHandler = (e) => {
   if (e.target.id === "GovernorsList") {
     setGovernorId(parseInt(e.target.value));
+    render()
   }
 };
 
