@@ -1,11 +1,10 @@
 //get governors with manager function
-
-import { setGovernorId } from "./TransientState.js";
 import { getAllGovernors } from "./managers/governorManager.js";
+import { setGovernorId } from "./TransientState.js";
 
 //make a dropdown for only active governors
 export const GovernorsList = async () => {
-  const governors = await getAllGovernors()
+  const governors = await getAllGovernors();
   let governorHTML = `<label for="GovernorsList">Choose a Governor</label>
     	                <select id="GovernorsList">
                         <option disabled selected>Select Governor</option>`;

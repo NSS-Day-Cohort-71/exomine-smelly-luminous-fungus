@@ -1,10 +1,16 @@
 const state = {
-  governorId: 2,
+  governorId: 0,
+  facilityId: 0,
 };
 
 export const setGovernorId = (id) => {
   state.governorId = id;
 };
+
+export const setFacilityId = (id) => {
+  state.facilityId = id;
+};
+
 export const setFacility = (facilityId) => {
   state.selectedFacility = facilityId;
   document.dispatchEvent(new CustomEvent("stateChanged"));
@@ -25,5 +31,3 @@ export const purchaseMineral = () => {
 
   document.dispatchEvent(new CustomEvent("stateChanged"));
 };
-
-export const getState = () => state
