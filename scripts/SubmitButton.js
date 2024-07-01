@@ -24,9 +24,6 @@ const handleSubmit = async (event) => {
     if (event.target.name === "purchase") {
         event.preventDefault()
         const state = getState()
-        const purchaseObj = {
-                mineralId: state.mineralId,
-                colonyId: state.colonyId
-        }
+        
     }
 }
