@@ -1,28 +1,39 @@
-//have to get minerals from mining facility
+import { render } from "./main.js";
 import { getAllFacilityMinerals } from "./managers/facilityMineralManager.js";
-//import state
-//display minerals available to colony to purchase
-const facilityMineralList = await getAllFacilityMinerals();
-export const MineralsForSale = async (facilityId) => {
-  facilityMineralList.filter((facility) => facility.id === facilityId);
+import { setSelectedMineralId, state } from "./TransientState.js";
+
+// Display minerals available to colony to purchase
+export const MineralsForSale = async () => {
+  const facilityMineralList = await getAllFacilityMinerals();
+  const facilityId = state.facilityId;
+
+  const filteredList = facilityMineralList.filter(
+    (mineral) => facilityId === mineral.facility.id
+  );
+
+  return filteredList
+    .map((mineral) => {
+      if (mineral.quantity <= 0) {
+        return `<div><section id="${mineral.id}" name="mineral" value="${mineral.id}" /> ${mineral.quantity} ${mineral.mineral.name}</div>`;
+      }
+      return `<div><input type="radio" id="${mineral.id}" name="mineral" value="${mineral.id}" /> ${mineral.quantity} ${mineral.mineral.name}</div>`;
+    })
+    .join("");
 };
 
-export const displayInventory = async (facilityId) => {
-  const inventory = MineralsForSale(facilityId);
-
-  inventory.forEach((item) => {
-    //each options should  have a radio button
-    return `<div>
-    <radio id="${item.id} /> ${item.quantity} ${item.mineral.name}
-    </div>
-    `;
-    //if inventory = 0 then no radio button
-  });
-};
-
-export const mineralsListHTML = () => {
+// If inventory = 0 then no radio button
+export const mineralsListHTML = async () => {
   let mineralsHTML = `<form id="minerals">`;
-  mineralsHTML += displayInventory().join("");
+  mineralsHTML += await MineralsForSale();
   mineralsHTML += `</form>`;
   return mineralsHTML;
 };
+
+// Update state with selected mineral
+const handleMineralSelection = (e) => {
+  if (e.target.name === "mineral") {
+    setSelectedMineralId(parseInt(e.target.value));
+  }
+};
+
+document.addEventListener("change", handleMineralSelection);

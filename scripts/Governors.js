@@ -24,7 +24,7 @@ export const GovernorsList = async () => {
 const governorChangeHandler = (e) => {
   if (e.target.id === "GovernorsList") {
     setGovernorId(parseInt(e.target.value));
-    render()
+    render();
   }
 };
 
