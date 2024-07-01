@@ -3,10 +3,15 @@ import { render } from "./main.js";
 import { getAllMiningFacilities } from "./managers/miningFacilityManager.js";
 
 const miningFacilities = await getAllMiningFacilities();
-
+let facilitiesHtml = ""
+if (condition) {
+  
+} else {
+  
+}
+facilitiesHtml = `<div><h2>Facility Minerals</h2></div>`
 export const facilities = async () => {
-  let facilitiesHtml = `<div><h2>Facility Minerals for Place Holder</h2></div>
-    <div><select id='facilities'><option disabled selected>Select Mining Facility</option>`;
+  facilitiesHtml += `<div><select id='facilities'><option disabled selected>Select Mining Facility</option>`;
   const facilityOptions = miningFacilities.map((facility) => {
     if (facility.isActive === true) {
       return `
