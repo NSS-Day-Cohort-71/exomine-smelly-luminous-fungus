@@ -1,10 +1,10 @@
-import { getState } from "./TransientState.js"
+import { getState, purchaseMineral } from "./TransientState.js"
 
 
 //export a function that creates a submit button
 export const SubmitButton = () => {
     const currentState = getState()
-    if(currentState.mineralId === 0) {
+    if(currentState.selectedMineralId === 0) {
         return `<button type="submit" name="purchase" class="submit-button">Nothing in Cart</button>`
     } else {
         return `<button type="submit" name="purchase" class="submit-button">Purchase Mineral</button>`
@@ -24,6 +24,7 @@ const handleSubmit = async (event) => {
     if (event.target.name === "purchase") {
         event.preventDefault()
         const state = getState()
-        
+        purchaseMineral(state.selectedMineralId, state.facilityId, state.colonyId)
     }
 }
+document.addEventListener("click", handleSubmit)

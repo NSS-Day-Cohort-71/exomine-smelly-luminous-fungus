@@ -1,4 +1,4 @@
-import { state } from "./TransientState.js";
+import { setColonyId, state } from "./TransientState.js";
 import { getAllColonies } from "./managers/colonyManager.js";
 import { getAllColonyMinerals } from "./managers/colonyMineralManager.js";
 //look at the chosen governor
@@ -10,6 +10,7 @@ export const Colonies = async () => {
     const assignedColony = allColonies.find(
       (colony) => currentState.governorId === colony.id
     );
+    setColonyId(assignedColony.id)
     const colonyInventory = allColonyMinerals.filter(
       (colMin) => colMin.colonyId === assignedColony.id
     );
