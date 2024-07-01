@@ -22,7 +22,7 @@ export const SubmitButton = () => {
 
 const handleSubmit = async (event) => {
     if (event.target.name === "purchase") {
-        event.preventDefault()
+        // event.preventDefault()
         const state = getState()
         purchaseMineral(state.selectedMineralId, state.facilityId, state.colonyId)
     }
