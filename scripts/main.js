@@ -3,6 +3,7 @@ import { GovernorsList } from "./Governors.js";
 import { Colonies } from "./Colonies.js";
 import { mineralsListHTML } from "./Minerals.js";
 import { SpaceCart } from "./SpaceCart.js";
+import { SubmitButton } from "./SubmitButton.js";
 
 const container = document.querySelector("#container");
 
@@ -12,7 +13,7 @@ export const render = async () => {
   const colonyHTML = await Colonies();
   const mineralsHTML = await mineralsListHTML();
   const spaceCartHTML = await SpaceCart()
-
+  const buttonHTML = await SubmitButton()
   const composedHTML = `
   <div class="flex-container">
     <div class="left-panel">
@@ -33,6 +34,7 @@ export const render = async () => {
     </div>
     <div>
     ${spaceCartHTML}
+    ${buttonHTML}
     </div>
   </div>
 `;
