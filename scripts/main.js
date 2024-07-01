@@ -2,6 +2,7 @@ import { facilities } from "./MiningFacilities.js";
 import { GovernorsList } from "./Governors.js";
 import { Colonies } from "./Colonies.js";
 import { mineralsListHTML } from "./Minerals.js";
+import { SpaceCart } from "./SpaceCart.js";
 
 const container = document.querySelector("#container");
 
@@ -10,6 +11,7 @@ export const render = async () => {
   const facilitiesHTML = await facilities();
   const colonyHTML = await Colonies();
   const mineralsHTML = await mineralsListHTML();
+  const spaceCartHTML = await SpaceCart()
 
   const composedHTML = `
   <div class="flex-container">
@@ -28,6 +30,9 @@ export const render = async () => {
       <section class="colony">
         ${colonyHTML}
       </section>
+    </div>
+    <div>
+    ${spaceCartHTML}
     </div>
   </div>
 `;
