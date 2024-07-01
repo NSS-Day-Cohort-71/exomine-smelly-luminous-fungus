@@ -31,10 +31,12 @@ export const render = async () => {
       <section class="colony">
         ${colonyHTML}
       </section>
-    </div>
-    <div>
-    ${spaceCartHTML}
-    ${buttonHTML}
+      <section class="space-cart">
+        ${spaceCartHTML}
+        <div class="cart-button">
+          ${buttonHTML}
+        </div>
+      </section>
     </div>
   </div>
 `;
