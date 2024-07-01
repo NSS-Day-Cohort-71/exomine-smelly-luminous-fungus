@@ -30,10 +30,11 @@ export const mineralsListHTML = async () => {
 };
 
 // Update state with selected mineral
-const handleMineralSelection = (e) => {
+export const handleMineralSelection = (e) => {
   if (e.target.name === "mineral") {
     setSelectedMineralId(parseInt(e.target.value));
   }
+  render()
 };
 
 document.addEventListener("change", handleMineralSelection);
