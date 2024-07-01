@@ -1,39 +1,52 @@
-/* main.css */
 
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* Body Style */
   body {
     font-family: 'Arial', sans-serif;
-    background-color: #0e0b16; /* Dark background for sci-fi theme */
+    background: url('../images/spaceback.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header {
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
   }
   
-  /* Container Style */
+  .header-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+  }
+  
   .container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 80%;
-  }
-  
-  /* Governor Section */
-  .governor-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: #1a1a2e;
-    border-radius: 8px;
   }
   
   .governor-section select {
@@ -53,17 +66,6 @@
     border-radius: 8px;
   }
   
-  /* Facilities Section */
-  .facilities-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: #1a1a2e;
-    border-radius: 8px;
-    margin-top: 20px;
-  }
-  
   .facilities-section select {
     margin-top: 10px;
     padding: 10px;
@@ -72,8 +74,7 @@
     border: none;
     border-radius: 4px;
   }
-  
-  /* Minerals Section */
+
   .minerals-section {
     display: flex;
     flex-direction: column;
@@ -85,16 +86,6 @@
     margin-top: 20px;
   }
   
-  /* Colony Section */
-  .colony {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: #1a1a2e;
-    border-radius: 8px;
-  }
-  
   .assigned-colony {
     font-size: 24px;
     margin-bottom: 10px;
@@ -104,10 +95,11 @@
     margin-bottom: 5px;
   }
   
-  /* Flexbox Layout */
   .flex-container {
     display: flex;
     justify-content: space-between;
+    width: 90%;
+    margin-top: 20px;
   }
   
   .left-panel {
@@ -121,4 +113,37 @@
     flex-direction: column;
     gap: 20px;
   }
+  .space-cart {
+    border: 2px dotted #e43f5a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
+  .cart-button {
+    margin-top: 20px;
+  }
+  
+  #orderButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #orderButton:hover {
+    background-color: #0056b3;
+  }
+  
+  section {
+    margin-bottom: 10px;
+  }
+
+  .governor-section, .facilities-section, .colony, .space-cart {
+    background-color: #2a2a2a;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
