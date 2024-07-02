@@ -15,13 +15,18 @@ export const MineralsForSale = async () => {
 
   return filteredList
     .map((mineral) => {
-      if (mineral.quantity <= 0) {
-        return `<div><section id="${mineral.id}" name="mineral" value="${mineral.id}" /> ${mineral.quantity} ${mineral.mineral.name}</div>`;
+      if (mineral.quantity > 0) {      
+        if (mineral.id === state.selectedMineralId) {
+          return `<div><input type="radio" id="${mineral.id}" name="mineral" value="${mineral.id}" checked /> ${mineral.quantity} ${mineral.mineral.name}</div>`;
+
+        } else { 
+          return `<div><input type="radio" id="${mineral.id}" name="mineral" value="${mineral.id}" /> ${mineral.quantity} ${mineral.mineral.name}</div>`
+        }
       }
-      return `<div><input type="radio" id="${mineral.id}" name="mineral" value="${mineral.id}" /> ${mineral.quantity} ${mineral.mineral.name}</div>`;
     })
     .join("");
 };
+        // return `<div><section id="${mineral.id}" name="mineral" value="${mineral.id}" /> ${mineral.quantity} ${mineral.mineral.name}</div>`;
 
 // If inventory = 0 then no radio button
 export const mineralsListHTML = async () => {
