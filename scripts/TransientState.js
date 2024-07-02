@@ -57,7 +57,7 @@ export const purchaseMineral = async (mineralId, facilityId, colonyId) => {
       }
       //call PUT function passing in index and created object
       updateColonyMinerals(colonyMineralIndex, newColonyMineralObject)
-      decreaseFacilityInventory(facilityId, mineralId)
+      
     } else {//if colonyMineral object doesn't exist, create new object
       const newColonyMineralObject = {
         colonyId: state.colonyId,
@@ -67,7 +67,7 @@ export const purchaseMineral = async (mineralId, facilityId, colonyId) => {
       //call POST function passing in object to be created
       createNewColonyMineral(newColonyMineralObject)
     }
-    
+    decreaseFacilityInventory(facilityId, mineralId)
   document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
