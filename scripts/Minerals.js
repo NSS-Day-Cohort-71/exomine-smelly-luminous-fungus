@@ -20,7 +20,7 @@ export const MineralsForSale = async () => {
           return `<div><input type="radio" id="${mineral.id}" name="mineral" value="${mineral.id}" checked /> ${mineral.quantity} ${mineral.mineral.name}</div>`;
 
         } else { 
-          return `<div><input type="radio" id="${mineral.id}" name="mineral" value="${mineral.id}" /> ${mineral.quantity} ${mineral.mineral.name}</div>`
+          return `<div><input type="radio" id="${mineral.id}" name="mineral" value="${mineral.id}" required /> ${mineral.quantity} ${mineral.mineral.name}</div>`
         }
       }
     })

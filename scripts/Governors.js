@@ -16,7 +16,7 @@ export const GovernorsList = async () => {
       if(governor.id === currentState.governorId){
       return `<option value="${governor.id}" selected>${governor.name}</option>`;
       } else {
-        return `<option value="${governor.id}">${governor.name}</option>`;
+        return `<option value="${governor.id}" required >${governor.name}</option>`;
 }}});
   governorHTML += governorsMap.join("");
   governorHTML += `</select>`;
