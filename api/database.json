@@ -436,9 +436,9 @@
     },
     {
       "id": 12,
-      "mineralId": 12,
       "facilityId": 3,
-      "quantity": 45
+      "mineralId": 12,
+      "quantity": 44
     },
     {
       "id": 13,
@@ -909,6 +909,12 @@
       "colonyId": 12,
       "mineralId": 30,
       "quantity": 20
+    },
+    {
+      "id": 61,
+      "colonyId": 7,
+      "mineralId": 12,
+      "quantity": 2
     }
   ]
 }
