@@ -1,12 +1,16 @@
-import { setFacilityId } from "./TransientState.js";
+import { setFacilityId, state } from "./TransientState.js";
 import { render } from "./main.js";
 import { getAllMiningFacilities } from "./managers/miningFacilityManager.js";
 
-const miningFacilities = await getAllMiningFacilities();
+
 
 export const facilities = async () => {
-  let facilitiesHtml = `<div><h2>Facility Minerals for Place Holder</h2></div>
-    <div><select id='facilities'><option disabled selected>Select Mining Facility</option>`;
+const miningFacilities = await getAllMiningFacilities();
+let facilitiesHtml = ""
+  facilitiesHtml += `<div>
+  <label for="facilities">Choose a Facility</label>
+  <select id='facilities'>
+  <option disabled selected>Select Mining Facility</option>`
   const facilityOptions = miningFacilities.map((facility) => {
     if (facility.isActive === true) {
       return `
@@ -24,8 +28,11 @@ export const facilities = async () => {
 const facilitiesChangeHandler = (e) => {
   if (e.target.id === "facilities") {
     setFacilityId(parseInt(e.target.value));
-    render();
+    // render();
+    console.log(state)
   }
 };
 
 document.addEventListener("change", facilitiesChangeHandler);
+
+
