@@ -45,3 +45,4 @@ export const render = async () => {
 };
 
 render();
+document.addEventListener("stateChanged", render)
