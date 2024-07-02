@@ -34,6 +34,7 @@ export const render = async () => {
       <section class="space-cart">
         ${spaceCartHTML}
         <div class="cart-button">
+        <div id="error-message" style="color: red; display: none;"></div>
           ${buttonHTML}
         </div>
       </section>

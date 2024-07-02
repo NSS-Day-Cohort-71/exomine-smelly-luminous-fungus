@@ -15,7 +15,7 @@ export const facilities = async () => {
         if(facility.id === state.facilityId){
         return `<option value="${facility.id}" selected>${facility.name}</option>`;
       } else {
-        return `<option value="${facility.id}">${facility.name}</option>`;
+        return `<option value="${facility.id}" required>${facility.name}</option>`;
       }
 }});
 

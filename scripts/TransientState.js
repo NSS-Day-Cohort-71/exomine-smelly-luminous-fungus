@@ -23,25 +23,47 @@ export const setSelectedMineralId = (id) => {
 export const setColonyId = (id) => {
   state.colonyId = id
 }
- /*
-        Does the chosen governor's colony already own some of this mineral?
-            - to check if governor's colony has the mineral, use findIndex() on colonyMinerals
-            - If mineral exists, what should happen? (check if found index is < 0)
-              -Use PUT to update that data, adding 1 to quantity.
-            - If mineral does not exist, what should happen?
-              -Use POST to create a new piece of data
 
-          THEN, use findIndex() on facilityMinerals 
-            -use that index to use PUT method to decrease quantity by 1
+// Function to display error messages
+const showError = (message) => {
+  const errorMessageElement = document.getElementById('error-message');
+  if (errorMessageElement) {
+    errorMessageElement.textContent = message;
+    errorMessageElement.style.display = 'block';
+  }
+}
 
-        Defining the algorithm for this method is traditionally the hardest
-        task for teams during this group project. It will determine when you
-        should use the method of POST, and when you should use PUT.
-
-        Only the foolhardy try to solve this problem with code.
-    */
+// Function to hide error messages
+const hideError = () => {
+  const errorMessageElement = document.getElementById('error-message');
+  if (errorMessageElement) {
+    errorMessageElement.style.display = 'none';
+  }
+}
 
 export const purchaseMineral = async (mineralId, facilityId, colonyId) => {
+  // Validation checks
+  if (!state.governorId) {
+    showError('Please select a governor.');
+    return;
+  }
+  if (!state.colonyId) {
+    showError('Please select a colony.');
+    return;
+  }
+  if (!state.facilityId) {
+    showError('Please select a facility.');
+    return;
+  }
+  if (!state.selectedMineralId) {
+    showError('Please select a mineral.');
+    return;
+  }
+
+  // Hide error message if all validations pass
+  hideError();
+
+// export const purchaseMineral = async (mineralId, facilityId, colonyId) => {
   const colonyMinerals = await getAllColonyMinerals()//fetch all colonyMinerals
   const colonyMineralIndex = colonyMinerals.findIndex(//finds index of matching colonyMineral
     colonyMineral => colonyMineral.colonyId === colonyId && colonyMineral.mineralId === mineralId
