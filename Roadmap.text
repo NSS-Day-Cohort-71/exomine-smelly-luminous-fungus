@@ -1,0 +1,39 @@
+This document should not be read as hard and fast requirements for the team. Any and all suggestions for improvements and clarifications are welcomed and encouraged.
+
+Given a governor wants to purchase minerals for a colony
+When a governor is chosen <--set transient state of governorId to the selected governor
+Then the inventory for that governor's colony should be displayed (the mineral names and quantities) <--reference the colony_minerals objects that match the transient state of
+    the governor, and then iterate for each object and render the results to DOM
+And the facility select element should be enabled <--set a boolean tag/value for an event listener that checks to see if a governor is selected and render the facility element
+
+Given a governor has been chosen ^^
+When a mining facility is chosen <--should have a drop down list with available selections
+Then the minerals available for purchase should be displayed (the mineral names and quantities) <--iterate on each mineral_facility object to render out quantity to DOM for
+    corresponding facility. Should either read the transient state of the facility or create an event listener that would render the necessary data. Both may be necessary for
+    future functionality.
+And a radio button should be next to each <--iterated quantity should render out in a HTML string as radio buttons along with the name of the mineral.
+
+Given a governor has been chosen ^^
+When a mining facility is chosen ^^
+Then any minerals with a quantity of 0 should not have a radio button <--part of the render function should include a check to see if the quantity of a mineral is greater than 0
+    before it is rendered.
+
+Given a governor has been selected ^^
+And a facility has been selected  ^^
+When a mineral has been selected <--needs an event listener to check for a "click" or "change" in the value 
+Then the chosen mineral should appear in a Space Cart area with a button labeled Purchase Mineral <--render function for the "Space Cart" button should show the selected mineral 
+    and what facility it came from. The function should listen for a change in the transient state of the mineral value and populate the mineral based on it's ID. Is this a "PUT"?
+
+Given a governor has been selected ^^
+And a facility has been selected ^^
+And a mineral has been selected ^^
+When the Purchase Mineral button is clicked <--needs an "click" event listener that triggers a "POST" that creates two new objects.
+Then 1 ton of the chosen mineral should be added to the inventory of the active colony And 1 ton of the chosen mineral should be removed from the inventory 
+    of the chosen mining facility <--when the post function is called it should create two objects: one for the facility_minerals that decrements the quantity by 1, and
+        another for the colony_minerals that increments the total by 1. This can be done by having the respective render functions subtract or add by finding the quantity value
+        of each object that shares a mineralId and combining them and rendering that result.
+
+-Since the governorId is never going to be posted to API there should be at least two separate transient state "buckets" that we can access: one for data that is only referenced and
+    and one for data that will eventually be pushed. Is this even necessary. Can the governorId be read without the transient state?
+
+-Idea for extra work: instead of a radio button have an input field that let's you select how much of a mineral you want to buy
