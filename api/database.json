@@ -4,151 +4,176 @@
       "id": 1,
       "name": "Jean-Luc Picard",
       "isActive": true,
-      "colonyId": 1
+      "colonyId": 1,
+      "image": "./images/governor-pictures/Picard.jpg"
     },
     {
       "id": 2,
       "name": "James T. Kirk",
       "isActive": true,
-      "colonyId": 2
+      "colonyId": 2,
+      "image": "./images/governor-pictures/captain-kirk-khan.jpg"
     },
     {
       "id": 3,
       "name": "Leia Organa",
       "isActive": true,
-      "colonyId": 3
+      "colonyId": 3,
+      "image": "./images/governor-pictures/leia.png"
     },
     {
       "id": 4,
       "name": "Lando Calrissian",
       "isActive": true,
-      "colonyId": 4
+      "colonyId": 4,
+      "image": "./images/governor-pictures/lando.jpg"
     },
     {
       "id": 5,
       "name": "William Adama",
       "isActive": true,
-      "colonyId": 5
+      "colonyId": 5,
+      "image": "./images/governor-pictures/Adama.jpg"
     },
     {
       "id": 6,
       "name": "Laura Roslin",
       "isActive": false,
-      "colonyId": 6
+      "colonyId": 6,
+      "image": "./images/governor-pictures/roslin.jpg"
     },
     {
       "id": 7,
       "name": "Ellen Ripley",
       "isActive": true,
-      "colonyId": 7
+      "colonyId": 7,
+      "image": "./images/governor-pictures/ripley.jpg"
     },
     {
       "id": 8,
       "name": "Malcolm Reynolds",
       "isActive": true,
-      "colonyId": 8
+      "colonyId": 8,
+      "image": "./images/governor-pictures/malcolm.jpg"
     },
     {
       "id": 9,
       "name": "Kathryn Janeway",
       "isActive": true,
-      "colonyId": 9
+      "colonyId": 9,
+      "image": "./images/governor-pictures/Star-Trek-Janeway-Smirk.jpg"
     },
     {
       "id": 10,
       "name": "Benjamin Sisko",
       "isActive": false,
-      "colonyId": 10
+      "colonyId": 10,
+      "image": "./images/governor-pictures/Sisko.jpg"
     },
     {
       "id": 11,
       "name": "Mon Mothma",
       "isActive": true,
-      "colonyId": 11
+      "colonyId": 11,
+      "image": "./images/governor-pictures/rotj_mon_mothma_1.jpg"
     },
     {
       "id": 12,
       "name": "Gaius Baltar",
       "isActive": true,
-      "colonyId": 12
+      "colonyId": 12,
+      "image": "./images/governor-pictures/Baltar.jpg"
     },
     {
       "id": 13,
       "name": "Padmé Amidala",
       "isActive": true,
-      "colonyId": 1
+      "colonyId": 1,
+      "image": "./images/governor-pictures/padme.jpg"
     },
     {
       "id": 14,
       "name": "Hikaru Sulu",
       "isActive": true,
-      "colonyId": 2
+      "colonyId": 2,
+      "image": "./images/governor-pictures/Star-Trek-Sulu-Takei-Fencing.jpg"
     },
     {
       "id": 15,
       "name": "Spock",
       "isActive": false,
-      "colonyId": 3
+      "colonyId": 3,
+      "image": "./images/governor-pictures/spock.jpg"
     },
     {
       "id": 16,
       "name": "Galen Erso",
       "isActive": true,
-      "colonyId": 4
+      "colonyId": 4,
+      "image": "./images/governor-pictures/galen-erso.jpg"
     },
     {
       "id": 17,
       "name": "Saul Tigh",
       "isActive": true,
-      "colonyId": 5
+      "colonyId": 5,
+      "image": "./images/governor-pictures/tigh.png"
     },
     {
       "id": 18,
       "name": "Tom Zarek",
       "isActive": true,
-      "colonyId": 6
+      "colonyId": 6,
+      "image": "./images/governor-pictures/Zarek.jpg"
     },
     {
       "id": 19,
       "name": "Jyn Erso",
       "isActive": true,
-      "colonyId": 7
+      "colonyId": 7,
+      "image": "./images/governor-pictures/Jyn-Erso-Felicity-Jones-Rogue-One-A-Star-Wars-Story.jpeg"
     },
     {
       "id": 20,
       "name": "Kara Thrace",
       "isActive": true,
-      "colonyId": 8
+      "colonyId": 8,
+      "image": "./images/governor-pictures/Thrace.jpg"
     },
     {
       "id": 21,
       "name": "Geordi La Forge",
       "isActive": false,
-      "colonyId": 9
+      "colonyId": 9,
+      "image": "./images/governor-pictures/LaForge-1.jpg"
     },
     {
       "id": 22,
       "name": "Tyr Anasazi",
       "isActive": true,
-      "colonyId": 10
+      "colonyId": 10,
+      "image": "./images/governor-pictures/Tyr.jpg"
     },
     {
       "id": 23,
       "name": "Susan Ivanova",
       "isActive": true,
-      "colonyId": 11
+      "colonyId": 11,
+      "image": "./images/governor-pictures/ivanova.JPG"
     },
     {
       "id": 24,
       "name": "John Sheridan",
       "isActive": true,
-      "colonyId": 12
+      "colonyId": 12,
+      "image": "./images/governor-pictures/sheridan.jpg"
     },
     {
       "id": 25,
       "name": "Nyota Uhura",
       "isActive": true,
-      "colonyId": 1
+      "colonyId": 1,
+      "image": "./images/governor-pictures/uhura.jpg"
     }
   ],
   "colonies": [

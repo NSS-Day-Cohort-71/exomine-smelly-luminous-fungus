@@ -19,12 +19,32 @@ export const GovernorsList = async () => {
   governorHTML += governorsMap.join("");
   governorHTML += `</select>`;
 
+  const selectedGovernor = governors.find(governor => governor.id === currentState.governorId);
+  const governorImageSrc = selectedGovernor && selectedGovernor.image ? selectedGovernor.image : "";
+
+  governorHTML += `
+    <div id="governor-image-container">
+      <img id="governor-image" src="${governorImageSrc}" alt="Governor Image" style="display:${governorImageSrc ? 'block' : 'none'};">
+    </div>
+  `;
+
   return governorHTML;
 };
 
-const governorChangeHandler = (e) => {
+const governorChangeHandler = async (e) => {
   if (e.target.id === "GovernorsList") {
+    const governors = await getAllGovernors();
     setGovernorId(parseInt(e.target.value));
+    const selectedGovernor = governors.find(governor => governor.id === currentState.governorId);
+
+    const governorImageElement = document.getElementById("governor-image");
+    if (selectedGovernor.image) {
+      governorImageElement.src = selectedGovernor.image;
+      governorImageElement.style.display = "block";
+    } else {
+      governorImageElement.src = "";
+      governorImageElement.style.display = "none";
+    }
     render();
   }
 };
