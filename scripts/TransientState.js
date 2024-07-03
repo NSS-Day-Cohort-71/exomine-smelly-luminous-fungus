@@ -24,7 +24,6 @@ export const setColonyId = (id) => {
   state.colonyId = id
 }
 
-// Function to display error messages
 const showError = (message) => {
   const errorMessageElement = document.getElementById('error-message');
   if (errorMessageElement) {
@@ -33,7 +32,6 @@ const showError = (message) => {
   }
 }
 
-// Function to hide error messages
 const hideError = () => {
   const errorMessageElement = document.getElementById('error-message');
   if (errorMessageElement) {
@@ -42,7 +40,7 @@ const hideError = () => {
 }
 
 export const purchaseMineral = async (mineralId, facilityId, colonyId) => {
-  // Validation checks
+ 
   if (!state.governorId) {
     showError('Please select a governor.');
     return;
@@ -60,33 +58,32 @@ export const purchaseMineral = async (mineralId, facilityId, colonyId) => {
     return;
   }
 
-  // Hide error message if all validations pass
+ 
   hideError();
 
-// export const purchaseMineral = async (mineralId, facilityId, colonyId) => {
-  const colonyMinerals = await getAllColonyMinerals()//fetch all colonyMinerals
-  const colonyMineralIndex = colonyMinerals.findIndex(//finds index of matching colonyMineral
+  const colonyMinerals = await getAllColonyMinerals()
+  const colonyMineralIndex = colonyMinerals.findIndex(
     colonyMineral => colonyMineral.colonyId === colonyId && colonyMineral.mineralId === mineralId
     )
-    if (colonyMineralIndex >= 0) {//checks if colonyMineral exists
+    if (colonyMineralIndex >= 0) {
       
-      const colonyMineralObject = colonyMinerals[colonyMineralIndex] //gives me the full object at the found index
-      const newColonyMineralObject = {//create a new object to PUT
+      const colonyMineralObject = colonyMinerals[colonyMineralIndex] 
+      const newColonyMineralObject = {
         id: colonyMineralObject.id,
         colonyId: colonyMineralObject.colonyId,
         mineralId: colonyMineralObject.mineralId,
         quantity: colonyMineralObject.quantity + 1
       }
-      //call PUT function passing in index and created object
+      
       updateColonyMinerals(colonyMineralIndex, newColonyMineralObject)
       
-    } else {//if colonyMineral object doesn't exist, create new object
+    } else {
       const newColonyMineralObject = {
         colonyId: state.colonyId,
         mineralId: state.selectedMineralId,
         quantity: 1
       }
-      //call POST function passing in object to be created
+      
       createNewColonyMineral(newColonyMineralObject)
     }
     decreaseFacilityInventory(facilityId, mineralId)
