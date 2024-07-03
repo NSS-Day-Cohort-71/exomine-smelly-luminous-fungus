@@ -27,6 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
   }
   
   .header-content {
@@ -109,13 +110,13 @@
   .left-panel {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
   }
   
   .right-panel {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
   }
   .space-cart {
     display: flex;
