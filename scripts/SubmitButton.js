@@ -1,4 +1,4 @@
-import { getState, purchaseMineral } from "./TransientState.js"
+import { getState, purchaseMineral, setSelectedMineralId } from "./TransientState.js"
 
 export const SubmitButton = () => {
     const currentState = getState()
@@ -15,6 +15,7 @@ const handleSubmit = async (event) => {
         event.preventDefault()
         const state = getState()
         purchaseMineral(state.selectedMineralId, state.facilityId, state.colonyId)
+        setSelectedMineralId(0)
     }
 }
 document.addEventListener("click", handleSubmit)
