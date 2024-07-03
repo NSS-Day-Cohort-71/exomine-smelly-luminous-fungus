@@ -2,7 +2,7 @@ import { getState, setColonyId } from "./TransientState.js";
 import { getAllColonies } from "./managers/colonyManager.js";
 import { getAllColonyMinerals } from "./managers/colonyMineralManager.js";
 import { getAllGovernors } from "./managers/governorManager.js";
-//look at the chosen governor
+
 export const Colonies = async () => {
   const currentState = getState();
   if (currentState.governorId != 0) {

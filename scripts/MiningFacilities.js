@@ -1,5 +1,4 @@
 import { setFacilityId, state } from "./TransientState.js";
-import { render } from "./main.js";
 import { getAllMiningFacilities } from "./managers/miningFacilityManager.js";
 
 
@@ -28,8 +27,6 @@ export const facilities = async () => {
   const facilitiesChangeHandler = (e) => {
     if (e.target.id === "facilities") {
       setFacilityId(parseInt(e.target.value));
-      // render();
-      console.log(state)
   }
 };
 

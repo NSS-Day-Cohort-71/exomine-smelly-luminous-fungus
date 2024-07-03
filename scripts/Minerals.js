@@ -3,8 +3,6 @@ import { getAllFacilityMinerals } from "./managers/facilityMineralManager.js";
 import { getAllMiningFacilities } from "./managers/miningFacilityManager.js";
 import { setSelectedMineralId, state } from "./TransientState.js";
 
-
-// Display minerals available to colony to purchase
 export const MineralsForSale = async () => {
   const facilityMineralList = await getAllFacilityMinerals();
   const facilityId = state.facilityId;
@@ -26,9 +24,7 @@ export const MineralsForSale = async () => {
     })
     .join("");
 };
-        // return `<div><section id="${mineral.id}" name="mineral" value="${mineral.id}" /> ${mineral.quantity} ${mineral.mineral.name}</div>`;
 
-// If inventory = 0 then no radio button
 export const mineralsListHTML = async () => {
   const miningFacilities = await getAllMiningFacilities()
   let mineralsHTML = ""
@@ -50,7 +46,6 @@ export const mineralsListHTML = async () => {
   return mineralsHTML;
 };
 
-// Update state with selected mineral
 export const handleMineralSelection = (e) => {
   if (e.target.name === "mineral") {
     setSelectedMineralId(parseInt(e.target.value));
