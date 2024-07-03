@@ -1,4 +1,4 @@
-import { setFacilityId, state } from "./TransientState.js";
+import { setFacilityId, setSelectedMineralId, state } from "./TransientState.js";
 import { getAllMiningFacilities } from "./managers/miningFacilityManager.js";
 
 
@@ -27,6 +27,7 @@ export const facilities = async () => {
   const facilitiesChangeHandler = (e) => {
     if (e.target.id === "facilities") {
       setFacilityId(parseInt(e.target.value));
+      setSelectedMineralId(0)
   }
 };
 

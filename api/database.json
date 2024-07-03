@@ -927,6 +927,12 @@
       "mineralId": 4,
       "quantity": 1,
       "id": 63
+    },
+    {
+      "colonyId": 5,
+      "mineralId": 13,
+      "quantity": 1,
+      "id": 64
     }
   ]
 }
